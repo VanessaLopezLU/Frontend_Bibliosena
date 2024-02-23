@@ -1,0 +1,28 @@
+{
+  "dispositivos": [
+    {
+      "codigo": "ew5e5t",
+      "serial": "465436",
+      "referencia": "3546",
+      "estado": "Bueno",
+      "tipo": "Portatil",
+      "id": 1
+    },
+    {
+      "codigo": "24",
+      "serial": "3253",
+      "referencia": "243",
+      "estado": "Bueno",
+      "tipo": "Mouse",
+      "id": 2
+    },
+    {
+      "codigo": "353",
+      "serial": "345",
+      "referencia": "353",
+      "estado": "Bueno",
+      "tipo": "CableHdmi",
+      "id": 3
+    }
+  ]
+}
