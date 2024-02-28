@@ -63,7 +63,7 @@
         <v-row class="d-flex justify-center">
           <v-btn height="35px" width="120px" justify="center" color=" aliceblue" style="color: #508d42 ;font-size: 18px"
             class="mr-12 lighten-2" @click="guardar" small>
-            Guardar
+            Agregar
           </v-btn>
         </v-row>
         <br>
