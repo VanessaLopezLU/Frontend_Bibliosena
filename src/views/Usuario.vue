@@ -12,7 +12,7 @@
 
           <v-card-text>
             <v-form ref="form" v-model="valid" lazy-validation>
-              <v-text-field v-model.number="paquete.cedula" type="number" :rules="campoRules" label="Cedula" required>
+              <v-text-field v-model="paquete.cedula"  :rules="campoRules" label="Cedula" required>
               </v-text-field>
 
               <v-text-field v-model="paquete.nombre" :rules="campoRules" label="Nombre" required>

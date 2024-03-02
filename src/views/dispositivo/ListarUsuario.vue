@@ -40,13 +40,9 @@
                 <v-text-field v-model="paqueteEditar.telefono" :counter="10" :rules="campoRules" 
                 label="Telefono" required>
               </v-text-field>
-                <v-text-field v-model="paqueteEditar.usuario" :counter="10" :rules="campoRules" 
+              <v-text-field v-model="paqueteEditar.usuario" :counter="10" :rules="campoRules" 
                 label="Usuario" required>
               </v-text-field>
-                <v-text-field v-model="paqueteEditar.contrasena" :counter="10" :rules="campoRules" 
-                label="Contraseña" required>
-              </v-text-field>
-        
               <v-select v-model="paqueteEditar.id_rol" :items="rolDb" item-text="descripcion" item-value="id" :rules="campoRules" 
                 label="Rol" required>
               </v-select>
@@ -107,8 +103,6 @@ export default {
       { text: "Telefono", value: "telefono" },
 
       { text: "Usuario", value: "usuario" },
-
-      { text: "Contraseña", value: "contrasena" },
 
       { text: "Rol", value: "id_rol.descripcion" },
 

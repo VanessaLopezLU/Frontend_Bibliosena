@@ -1,13 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-
+import createPersistedState from "vuex-persistedstate"
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    token: null, // Token de autenticación JWT
-    rol: null, // Datos del usuario autenticado
+   user: null
   },
   mutations: {
     setToken(state, token) {
@@ -16,14 +15,10 @@ export default new Vuex.Store({
       
     },
     setUser(state, user) {
-      state.token = user.access_token;
-      state.rol = user.rol;
+      state.user = user;
+      
     },
-    clearAuthData(state) {
-      state.token = null;
-      state.user = null;
-       // Limpia el token del almacenamiento local
-    },
+    
   },
   actions: {
     async login({ commit }, credentials) {
@@ -43,14 +38,26 @@ export default new Vuex.Store({
   },
   getters: {
     isAuthenticated(state) {
-      return state.token !== null;
+      return state.user.access_token !== null;
     },
     getRol(state) {
-      return state.rol;
+      return state.user.rol;
     },
     getToken(state) {
-      return state.token;
+      return state.user.access_token;
     },
+    getUsuario(state){
+      return state.user;
+    },
+    getCedula(state){
+      return state.user.cedula;
+    },
+    getNombre(state){
+      return state.user.nombre;
+    }
+
+   
   },
+  plugins:[createPersistedState()]
 });
 

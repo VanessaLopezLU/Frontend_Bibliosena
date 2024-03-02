@@ -26,7 +26,7 @@ let menu =
                 title: "Estado Usuario",
               },
               {
-                href:  '/dashboard/usuario',
+                href:  '/dashboard/listarusuario',
                 title: "Listar Usuario",
               },
             ],
@@ -36,7 +36,7 @@ let menu =
             icon: "far fa-address-book",
             child: [
               {
-                href: "/dashboard/manager",
+                href: "/dashboard/crearequipo",
                 title: "Registrar Equipo ",
               },
              
@@ -46,10 +46,7 @@ let menu =
             title: "Prestamos Dispositivos",
             icon: "far fa-id-card",
             child: [
-              {
-                href: "/dashboard/prestamodispositivo",
-                title: "Registro",
-              },
+              
               {
                 href: "/dashboard/EstadoPrestamo",
                 title: "Estado Prestamo",
@@ -62,11 +59,7 @@ let menu =
                 href: "/dashboard/DevolucionPrestamo",
                 title: "Devolucion Prestamo",
               },
-              {
-                href: "",
-                title: "Cancelacion",
-              },
-        
+             
             ],
           },
           {
@@ -100,7 +93,10 @@ let menu =
                 href: "/dashboard/prestamodispositivo",
                 title: "Registro",
               },
-             
+              {
+                href: "/dashboard/listarprestamo",
+                title: "Mis Prestamos",
+              },
         
             ],
           },

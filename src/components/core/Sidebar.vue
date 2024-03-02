@@ -7,9 +7,12 @@
         class="margen"
         max-height="250"
         aspect-ratio="1.7"
+        
       >
-      </v-img>
-
+      </v-img> <div>
+        <h1 style="text-align: center; color: #fff; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">{{ nombre }}</h1>
+      </div>
+       
       <v-divider> </v-divider>
 
       <sidebar-menu class="tipo" showOneChild :menu="menu" />
@@ -72,7 +75,8 @@ export default {
 
     menu: [],
   }),
-   mounted(){
+   created(){
+    this.nombre = this.$store.getters.getNombre;
     const rol = this.$store.getters.getRol;
     if(rol == null){
       this.$router.push('/');

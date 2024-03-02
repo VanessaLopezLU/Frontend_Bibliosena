@@ -9,13 +9,12 @@
         <hr>
        <center> <div class="input">
             <h5>Cedula
-             <input  v-model.number="paquete.cedula" class="mi-input" placeholder="">
-                    <v-btn height="35px" color=" aliceblue" style="color: #508d42 ;font-size: 18px"
+             <input  v-model.number="paquete.cedula" class="mi-input" placeholder=""> 
+            </h5>
+            <v-btn height="35px" color=" aliceblue" style="color: #508d42 ;font-size: 18px; display: flex;"
                       class="button" @click="Buscar" small>
                       Buscar
                     </v-btn>
-                
-            </h5>
         
             <hr>
         </div></center>
@@ -88,7 +87,7 @@
       </v-btn>
         <br>
         <br>
-        {{ NovedadN }}
+       
     </v-card>
 </template>
   

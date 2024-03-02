@@ -11,14 +11,8 @@
         <v-card-text>
           <v-form ref="form">
             <v-row>
-              <v-col cols="12" md="12">
-                <v-select v-model="paquete.cedula" :items="usuarioDB" item-text="cedula" item-value="cedula"
-                  :rules="campoRules" label="Número de documento"></v-select>
-              </v-col>
-              <v-col cols="12" md="12">
-                <v-select v-model="paquete.id_estado" :items="estadodB" item-text="estado" item-value="id"
-                  :rules="campoRules" label="Estado Prestamo"></v-select>
-              </v-col>
+             
+             
               <v-col cols="12" md="6">
                 <v-text-field v-model="dateRangeText" :rules="nameRules" label="Fecha del Préstamo"
                   prepend-icon="mdi-calendar" readonly @click="showDatePickerDialog = true">
@@ -139,30 +133,7 @@
         </template>
         <br>
         <br>
-        <div>
-          <v-toolbar height="90px" dark prominent style="background-color: #6cd255" elevation="16">
-            <v-row style="margin-top: 10px; font-size: 39px;" class="d-flex justify-center">
-              <v-toolbar-title class=" text-center color-text">Lista de estados prestamo</v-toolbar-title>
-            </v-row>
-          </v-toolbar>
-          <v-data-table :headers="headers"   :items="datos" :items-per-page="5" class="elevation-1">
-            <template v-slot:item.actions="{ item }">
-              
-              <v-icon
-                  small
-                  class="mr-2"
-                  @click="guardarID(item)"
-                  v-bind="attrs"
-                  v-on="on"
-                >
-                  fas fa-eye
-                </v-icon>
-                <v-icon small @click="deleteItem(item.id)">
-                  mdi-delete
-                </v-icon>
-            </template>
-          </v-data-table>
-        </div>
+        
       </v-card>
 
       <!--Modal de confirmacion  para  editar -->
@@ -256,8 +227,8 @@ export default {
     paquete: {
       fecha_prestamo: null,
       fecha_devolucion: null,
-      cedula: null,
-      id_estado: null,
+      cedula:null,
+      id_estado: 1,
       detalleprestamo: [
 
       ],
@@ -312,11 +283,6 @@ export default {
       },
       deep: true,
     },
-  },
-  created(){
-    this.listartipoequipo();
-    this.prestamo();
-
   },
   computed: {
     dateRangeText() {
@@ -385,9 +351,10 @@ export default {
     },
     Prestar() {
       var vm = this;
+      this.paquete.cedula =  this.$store.getters.getCedula;
       if (this.$refs.form.validate()){
         axios
-          .post("http://localhost:3000/prestamo/crear", this.paquete)
+          .post(`http://localhost:3000/prestamo/crear`, this.paquete)
           .then( (response) => {
             
             vm.cargar()
@@ -543,6 +510,12 @@ export default {
     this.listartipoequipo();
     this.listarusuario();
     this.listarestado();
+    this.listartipoequipo();
+    const rol = this.$store.getters.getRol;
+    console.log(this.$store.getters.getUsuario);
+   if(rol=='Instructor'){
+     this.paquete.cedula=this.$store.getters.getUsuario.cedula;
+    }
     var vm = this;
     axios
       .get("http://localhost:3000/prestamo")

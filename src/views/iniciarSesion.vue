@@ -1,22 +1,17 @@
 <template>
   <v-app>
-    <v-app-bar app dark img src="../assets/logos/fo.png" height="180">
+    <v-app-bar app dark img src="../assets/fondo2.jpg" height="180">
       <v-row>
         <v-col cols="1">
-          <img
-            src="../assets/logos/fondo1.png"
-            style="max-height: 270px; max-width: 400px"
-          />
+          <img src="../assets/logos/fondo1.png" style="max-height: 270px; max-width: 400px" />
         </v-col>
         <v-col cols="10">
-          <h1 class="let">Sistema De Prestamos</h1>
+          <h1 class="let">Sistema De Prestamos BD</h1>
         </v-col>
         <v-col cols="1">
-          <v-avatar style="margin-top: 80px">
-            <img
-              @click="dialog = true"
-              src="https://img.freepik.com/vector-premium/retrato-avatar-hombre-joven-caucasico-marco-redondo-ilustracion-plana-dibujos-animados-vector_551425-19.jpg"
-            />
+          <v-avatar style="width: 80px; margin-top: 80px">
+            <img @click="dialog = true"
+              src="https://img.freepik.com/vector-premium/retrato-avatar-hombre-joven-caucasico-marco-redondo-ilustracion-plana-dibujos-animados-vector_551425-19.jpg" />
           </v-avatar>
         </v-col>
       </v-row>
@@ -24,11 +19,7 @@
 
     <v-main>
       <v-carousel class="carusel" :show-arrows="false" cycle="">
-        <v-carousel-item
-          v-for="(item, i) in slider"
-          :key="i"
-          :src="item.src"
-        ></v-carousel-item>
+        <v-carousel-item v-for="(item, i) in slider" :key="i" :src="item.src"></v-carousel-item>
       </v-carousel>
 
       <v-dialog v-model="dialog" max-width="350" height="400" persistent>
@@ -37,58 +28,31 @@
             <div class="user_card">
               <div class="justify-content-center">
                 <div class="brand_logo_container">
-                  <img
-                    src="../assets/logos/fondo1.png"
-                    style="max-height: 300px; max-width: 400px"
-                  />
+                  <img src="../assets/logos/fondo1.png" style="max-height: 300px; max-width: 400px" />
                 </div>
               </div>
               <div class="d-flex justify-content-center form_container">
                 <form v-on:submit.prevent>
                   <div class="input-group mb-3">
                     <div class="input-group-append">
-                      <v-icon
-                        color="#A9DFBF"
-                        style="margin: 0 7px; font-size: 30px"
-                        >fas fa-user</v-icon
-                      >
+                      <v-icon color="#A9DFBF" style="margin: 0 7px; font-size: 30px">fas fa-user</v-icon>
                     </div>
-                    <input
-                      v-model.number="paquete.cedula"
-                      type="number"
-                      name=""
-                      class="form-control input_user"
-                      placeholder="Username"
-                    />
+                    <input v-model="paquete.cedula" name="" class="form-control input_user" placeholder="Username" />
                   </div>
                   <div class="input-group mb-2">
                     <div class="input-group-append">
-                      <v-icon
-                        color="#A9DFBF"
-                        style="margin: 0 7px; font-size: 30px"
-                        >fas fa-key</v-icon
-                      >
+                      <v-icon color="#A9DFBF" style="margin: 0 7px; font-size: 30px">fas fa-key</v-icon>
                     </div>
-                    <input
-                      v-model="paquete.contrasena"
-                      type="password"
-                      name=""
-                      class="form-control input_pass"
-                      placeholder="Password"
-                    />
+                    <input v-model="paquete.contrasena" type="password" name="" class="form-control input_pass"
+                      placeholder="Password" />
                   </div>
-                  <div
-                    class="d-flex justify-content-center mt-3 login_container"
-                    v-if="prueba == 0"
-                  >
-                    <vs-button color="#A9DFBF" @click="login"
-                      >Iniciar Sesión</vs-button
-                    >
-                    
-                    
+                  <div class="d-flex justify-content-center mt-3 login_container" v-if="prueba == 0">
+                    <vs-button color="#A9DFBF" @click="login">Iniciar Sesión</vs-button>
+
+
                   </div>
 
-                 
+
                 </form>
               </div>
 
@@ -109,23 +73,16 @@
       </center>
       <center>
         <p>
-          <b
-            >una seleccion especial para que no dejes de leer, escuchar, ver y
-            jugar.</b
-          >
+          <b>una seleccion especial para que no dejes de leer, escuchar, ver y
+            jugar.</b>
         </p>
       </center>
 
       <v-sheet class="mx-auto" elevation="8" max-width="1026">
-        <v-slide-group
-          v-model="model"
-          class="pa-4"
-          active-class="success"
-          show-arrows
-        >
+        <v-slide-group v-model="model" class="pa-4" active-class="success" show-arrows>
           <v-slide-item v-for="n in items2" :key="n">
             <v-card class="ma-6" height="300" width="190">
-              <v-row class="fill-height" align="center" justify="center">
+              <v-row class="fill-height" justify="center">
                 <v-img height="320" :src="n"></v-img>
               </v-row>
             </v-card>
@@ -135,12 +92,8 @@
       <v-row style="margin-top: 40px"></v-row>
       <v-row class="tar">
         <v-card class="mx-auto carta" max-width="500" margin-top="80px;">
-          <v-img
-            class="white--text align-end"
-            height="400px"
-            width="500px"
-            src="https://www.bibliotecas.ugto.mx/pages/images/pdomicilio.png"
-          >
+          <v-img class="white--text align-end" height="400px" width="500px"
+            src="https://www.bibliotecas.ugto.mx/pages/images/pdomicilio.png">
             <v-card-title>Prestamo de libros</v-card-title>
           </v-img>
 
@@ -165,12 +118,8 @@
         </v-card>
 
         <v-card class="mx-auto carta1" max-width="500">
-          <v-img
-            class="white--text align-end"
-            height="400px"
-            width="500px"
-            src="https://www.uaa.mx/portal/wp-content/uploads/2021/01/BOLETIN-10--1024x683.jpg"
-          >
+          <v-img class="white--text align-end" height="400px" width="500px"
+            src="https://www.uaa.mx/portal/wp-content/uploads/2021/01/BOLETIN-10--1024x683.jpg">
             <v-card-title>Prestamo de computadores</v-card-title>
           </v-img>
 
@@ -198,122 +147,80 @@
       </v-row>
     </v-container>
     <v-row style="margin-top: 40px"></v-row>
-    <footer
-      color="#D7DBDD"
-      class="text-center text-lg-start bg-light text-muted"
-    >
-      <v-row style="margin-top: 40px"></v-row>
-      <section class="d-flex justify-content-center p-4 border-bottom">
+    <footer>
+      <section>
         <div>
-          <v-row align="center" justify="space-around">
-            <v-icon color="#21618C" style="margin: 0 7px; font-size: 30px"
-              >fab fa-facebook-f</v-icon
-            >
-
-            <v-icon color="#85C1E9 " style="margin: 0 7px; font-size: 30px"
-              >fab fa-twitter</v-icon
-            >
-
-            <v-icon color="#27AE60 " style="margin: 0 7px; font-size: 30px"
-              >fab fa-whatsapp</v-icon
-            >
-
-            <v-icon color="#E74C3C " style="margin: 0 7px; font-size: 30px"
-              >fab fa-instagram</v-icon
-            >
+          <br>
+          <br>
+          <v-row justify="center">
+            <v-icon color="#21618C" style="margin: 0 10px; font-size: 30px">fab fa-facebook-f</v-icon>
+            <v-icon color="#85C1E9" style="margin: 0 10px; font-size: 30px">fab fa-twitter</v-icon>
+            <v-icon color="#27AE60" style="margin: 0 10px; font-size: 30px">fab fa-whatsapp</v-icon>
+            <v-icon color="#7B1FA2" style="margin: 0 10px; font-size: 30px">fab fa-instagram</v-icon>
           </v-row>
         </div>
       </section>
-
-      <v-container class="footer" >
-        <v-row justify="center">
-          <v-col class="text-center mb-4" md="-3" lg="1" xl="2">
-           <v-row style="margin-top: 6px"></v-row>
-            <v-img
-            
-              src="../assets/logos/fondo1.png"
-              max-height="130"
-              max-width="250"
-            />
-            <p style="color=black,">
-              El SBSENA. Está conformado por el Equipo de
+      <v-row justify="center" class="diagonal-row">
+        <v-col cols="12" md="6" class="offset diagonal-column">
+          <div class="text-center">
+            <v-img src="../assets/logos/fondo1.png" max-height="160" max-width="270" />
+            <p style="color:black; font-family: Times, 'Times New Roman', serif; font-size: 20px;">
+              El SBSENA Está conformado por el Equipo de
               Gestión, quienes tienen a su cargo la formulación y gestión de
               proyectos, la implementación y sostenibilidad del Proyecto
-              Biblioteca Digital, así como del seguimiento y evaluación de los
-              componentes del sistema, de acuerdo con las políticas
-              institucionales.
+              Biblioteca Digital
             </p>
-          </v-col>
-          <v-col class="text-center mb-4" md="3" lg="2" xl="2">
-          <v-row style="margin-top: 75px"></v-row>
-            <h6 class="text-uppercase fw-bold mb-4">Products</h6>
-            <p>
-              <a href="#!" class="text-reset">Angular</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">React</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Vue</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Laravel</a>
-            </p>
-          </v-col>
-          <v-col class="text-center mb-4" md="3" lg="2" xl="2">
-           <v-row style="margin-top: 75px"></v-row>
-            <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
-            <p>
-              <a href="#!" class="text-reset">Pricing</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Settings</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Help</a>
-            </p>
-          </v-col>
-          <v-col class="text-center mb-md-0 mb-4" md="2" lg="3" xl="3">
-           <v-row style="margin-top: 75px"></v-row>
+          </div>
+        </v-col>
+
+
+
+        <v-col cols="12" md="3" class="diagonal-column">
+          <div class="text-center text-md-start">
+            <br><br><br><br><br><br><br>
             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
             <p><i class="fas fa-home me-3"></i> Calle 24 con, Cra. 14, Montería, Córdoba</p>
             <p>
               <i class="fas fa-envelope me-3"></i>
               info@example.com
             </p>
-            <p><i class="fas fa-phone me-3"></i>  (94) 7838050</p>
-           
-          </v-col>
-        </v-row>
-      </v-container>
+            <p><i class="fas fa-phone me-3"></i> (94) 7838050</p>
+          </div>
+        </v-col>
+        
+        <v-col cols="12" md="2" class="diagonal-column">
+          <v-form>
+          <v-text-field label="Name" v-model="name" outlined></v-text-field>
+          <v-text-field label="Email" v-model="email" outlined></v-text-field>
+          <v-text-field label="Message" v-model="message" outlined></v-text-field>
 
-      <div
-        class="text-center p-4"
-        style="background-color: rgba(0, 0, 0, 0.05)"
-      >
-        © 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
-          >MDBootstrap.com</a
-        >
+          <v-btn @click="submitForm" color="primary">Submit</v-btn>
+        </v-form>
+        </v-col>
+      </v-row>
+
+
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0)">
+        © 2021 Copyright
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
       </div>
     </footer>
+
   </v-app>
 </template>
+
 <script>
-import  axios from 'axios';
+import axios from 'axios';
 export default {
   name: "App",
   data: () => ({
     valid: true,
-    
-    
+
+
     active: "home",
     dialog: false,
     noti: null,
-    
+
     error: false,
     msg: "",
     isBusy: false,
@@ -341,7 +248,7 @@ export default {
       cedula: null,
       contrasena: null
     },
-      
+
 
     slider: [
       {
@@ -371,45 +278,38 @@ export default {
   }),
 
   methods: {
-  
-    async login(){
-      var vm = this;
-      
-        axios
-          .post("http://localhost:3000/auth/login", vm.paquete)
-          .then(function (response){
-            console.log(response);
-            if(response.data != ""){
-              vm.$store.commit('setUser',response.data);
-              vm.$router.push("dashboard/welcome");
-            } else{
-              alert("usuario no resgistrado");
-            }
-           
-    
-          })
-          .catch(function (error) {
-              alert(error);
-              console.log(error);
-          })
-          .finally(function () {
-             vm.$refs.form.reset();
-          });
-      }
 
-    },
-   
+    async login() {
+      var vm = this;
+
+      axios
+        .post("http://localhost:3000/auth/login", vm.paquete)
+        .then(function (response) {
+          console.log(response);
+          if (response.data != "") {
+            vm.$store.commit('setUser', response.data);
+            vm.$router.push("dashboard/welcome");
+          } else {
+            alert("usuario no resgistrado");
+          }
+
+
+        })
+        .catch(function (error) {
+          alert(error);
+          console.log(error);
+        })
+        .finally(function () {
+          vm.$refs.form.reset();
+        });
+    }
+
+  },
+
 };
 </script>
 
 <style scoped>
-.botoninicio {
-  background-color: #05aff2;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 55px;
-}
 .titulo {
   color: rgb(8, 4, 4);
   font-size: 16px;
@@ -417,25 +317,28 @@ export default {
   margin-top: 55px;
   font-family: "times new roman", 'cursive';
 }
+
 .let {
-  font-family: "Garamond", 'cursive';
+  font-family: Times, 'Times New Roman', serif;
   margin-top: 80px;
   font-size: 60px;
   text-align: center;
-  color: rgb(65, 135, 62);
-
-  
+  color: rgb(0, 128, 0)
 }
-.tar{
+
+.tar {
   font-family: "times new roman", 'cursive';
 }
-.footer{
-color: black;
+
+footer {
+  color: black;
+  background-color: #32CD32;
 }
 
 .logo {
   margin-top: 25px;
 }
+
 .fondo2 {
   background-image: url("../assets/fondoTimeLine.png");
   background-size: 100% 100%;
@@ -444,6 +347,7 @@ color: black;
   height: 100%;
   margin: 0;
 }
+
 .fondoGeneral {
   background-image: url(../assets/fondo.png);
   background-size: 100% 100%;
@@ -471,6 +375,7 @@ color: black;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
+
 .user_card {
   height: 500px;
   width: 350px;
@@ -542,13 +447,15 @@ color: black;
   outline: 0px !important;
 }
 
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
   background-color: #c0392b !important;
 }
-/*
-.navbar{
-  background-image:url("../assets/Tulbar.png");
-  background-attachment: fixed;
-  max-height: 55px;
-}*/
+
+.diagonal-row {
+  transform: skewY(-3deg);
+}
+
+.diagonal-column {
+  transform: skewY(3deg);
+}
 </style>

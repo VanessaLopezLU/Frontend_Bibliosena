@@ -26,12 +26,25 @@ const routes = [{
             path: '/dashboard/welcome',
             component: () =>
                 import('../views/welcome.vue'),
+
+                
+        },
+        {
+            name: 'DashboardSalir',
+            path: '/dashboard/salir',
+            component: () =>
+                import('../views/welcome.vue'),
+                beforeEnter:(_, __, next)=>{
+                    store.commit('setUser', null)
+                    next('/')
+                }
+                
                 
         },
 
         {
             name: 'Dashboarmanager',
-            path: '/dashboard/manager',
+            path: '/dashboard/crearequipo',
             component: () =>
                 import('../views/dispositivo/CrearEquipo.vue'),
                 
@@ -46,6 +59,20 @@ const routes = [{
                 beforeEnter:(_, __, next)=>{
                     let rol = store.getters.getRol
                     if(rol != null){
+                        next()
+                    }else{
+                        return next('/')
+                    }
+                }
+        },
+        {
+            name: 'DashboardListarPrestamo',
+            path: '/dashboard/listarprestamo',
+            component: () =>
+                import('../views/dispositivo/ListaPrestamo.vue'),
+                beforeEnter:(_, __, next)=>{
+                    let rol = store.getters.getRol
+                    if(rol == 'Instructor'){
                         next()
                     }else{
                         return next('/')
@@ -102,6 +129,12 @@ const routes = [{
             component: () =>
                 import('../views/dispositivo/EstadoUsuario.vue'),
         },       
+        {
+            name: 'DashboardListarUsuario',
+            path: '/dashboard/listarusuario',
+            component: () =>
+                import('../views/dispositivo/ListarUsuario.vue'),
+        }, 
         {
             name: 'DashboardEstadoPrestamo',
             path: '/dashboard/estadoprestamo',

@@ -24,13 +24,16 @@
                     </v-avatar>
          </span>
       </template>
-      <v-list dense>
+      <v-list dense
+      >
        <v-list-item-group
         color="primary"
       >
-        <v-list-item
+        <v-list-item 
+        
           v-for="(item, i) in items"
           :key="i"
+          :to="item.link"
         >
           <v-list-item-icon>
             <v-icon v-text="item.icon"></v-icon>
@@ -51,8 +54,8 @@
     data() {
       return {
         items: [
-        { text: 'Perfil', icon: 'mdi-clock' },
-        { text: 'Salir', icon: 'mdi-account' },
+        { text: 'Perfil', icon: 'mdi-clock', link:"/dashboard/salir"   },
+        { text: 'Salir', icon: 'mdi-account', link:"/dashboard/salir" },
       ],
       }
     },
