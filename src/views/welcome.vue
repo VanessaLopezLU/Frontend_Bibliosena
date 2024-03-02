@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <!-- Added carousel and text at the top -->
+    
     <v-row>
       <v-col cols="12">
         <v-carousel class="carusel" :show-arrows="false" cycle="">
@@ -13,7 +13,7 @@
       </v-col>
     </v-row>
 
-    <!-- Added text at the top -->
+    
     <v-row>
       <v-col cols="12">
         <h1 class="t">Sistema de Prestamos de Medios Audiovisuales</h1>
@@ -21,7 +21,7 @@
       </v-col>
     </v-row>
 
-    <!-- Cards section -->
+   
     
      
    
@@ -32,7 +32,7 @@
 export default {
   data() {
     return {
-      // Added carousel items data
+    
       slider: [
       {
         src: require("../assets/carusel/biblioteca2.png"),
@@ -44,7 +44,7 @@ export default {
         src: require("../assets/carusel/imag.png"),
       },
     ],
-      // Your existing data can be added here
+      
     
     };
   },
@@ -52,11 +52,13 @@ export default {
 </script>
 
 <style scoped>
-/* Your existing styles remain unchanged */
 
-/* Added style for carousel image */
+.t{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 40px;
+}
 .carusel {
-  height: 100%; /* Adjust as needed */
-  width: 100%; /* Adjust as needed */
+  height: 100%;
+  width: 100%; 
 }
 </style>
