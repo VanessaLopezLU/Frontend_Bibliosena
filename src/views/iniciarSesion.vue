@@ -161,7 +161,7 @@
         </div>
       </section>
       <v-row justify="center" class="diagonal-row">
-        <v-col cols="12" md="6" class="offset diagonal-column">
+        <v-col cols="12" md="4" class="offset diagonal-column">
           <div class="text-center">
             <v-img src="../assets/logos/fondo1.png" max-height="160" max-width="270" />
             <p style="color:black; font-family: Times, 'Times New Roman', serif; font-size: 20px;">
@@ -175,7 +175,7 @@
 
 
 
-        <v-col cols="12" md="3" class="diagonal-column">
+        <v-col cols="12" md="6" class="diagonal-column">
           <div class="text-center text-md-start">
             <br><br><br><br><br><br><br>
             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
@@ -188,15 +188,8 @@
           </div>
         </v-col>
         
-        <v-col cols="12" md="2" class="diagonal-column">
-          <v-form>
-          <v-text-field label="Name" v-model="name" outlined></v-text-field>
-          <v-text-field label="Email" v-model="email" outlined></v-text-field>
-          <v-text-field label="Message" v-model="message" outlined></v-text-field>
+       
 
-          <v-btn @click="submitForm" color="primary">Submit</v-btn>
-        </v-form>
-        </v-col>
       </v-row>
 
 
